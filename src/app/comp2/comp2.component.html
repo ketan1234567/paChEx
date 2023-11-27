@@ -1,0 +1,11 @@
+<h1>child Component </h1>
+
+<input type="text" #texval (keydown)="childComponent(texval.value)">
+<h3>message From Parent component{{message}}</h3>
+
+
+<ul>
+    <li *ngFor="let data of mainData">
+{{data}}
+    </li>
+</ul>
