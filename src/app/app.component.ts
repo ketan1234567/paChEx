@@ -9,26 +9,31 @@ import { Book } from './book';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private _mainServices:MainService){}
-  childData:any
+  constructor(private _mainServices: MainService) {
+
+  }
+  childData: any
   allBooks: any;
-  ngOnInit(){
+
+  favBook: Observable<Book> | undefined; // Replace with your initial value or observable
+
+  ngOnInit() {
     this.getBooks()
 
   }
   title = 'paChEx';
   _msg = "Hello Sahosoft";
-  chnages(val:any){
-   this._msg=val;
+  chnages(val: any) {
+    this._msg = val;
   }
-  allMaindata=['vishal','hitesh','suraj','mustaq']
-  company={
-    id:'102',
-    name:"ketan",
-    email:'deshmukhketan647@gmail.com',
-    password:'1234'
+  allMaindata = ['vishal', 'hitesh', 'suraj', 'mustaq']
+  company = {
+    id: '102',
+    name: "ketan",
+    email: 'deshmukhketan647@gmail.com',
+    password: '1234'
   }
-  getBooks(){
+  getBooks() {
     this._mainServices.getAllBooks().subscribe(
       (books) => {
         this.allBooks = books;
@@ -39,11 +44,18 @@ export class AppComponent {
       }
     );
   }
-    
-  mukesh(val:any){
-    this.childData=val
-console.log(val);
+
+  mukesh(val: any) {
+    this.childData = val
+    console.log(val);
 
   }
+  checkId(id:any){
+    this.favBook = this._mainServices.getfavbookid(id);
+    console.log(this.favBook);
+    
+  }
+
+
 
 }

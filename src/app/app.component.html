@@ -6,7 +6,6 @@
   <br>
   {{childData}}
 </div>
-
 <br>
 <div  style="text-align: center; background-color: aquamarine;">
     <!-- <app-comp2 [company23]="company"> </app-comp2> -->
@@ -22,12 +21,17 @@
 
 </app-comp3>
 <br><br>
-<ul>
+<!-- <ul>
   <li *ngFor="let book of allBooks">
     Id: {{ book.id }}, Name: {{ book.name }}, Category: {{ book.category }}
   </li>
-</ul>
-
-</div>
-
+</ul> -->
+<br><br>
+<input type="text" #textVlue (keyup)="checkId(textVlue.value)" placeholder="enter your id" >
+<div *ngIf="favBook | async as book; else loading">
+  Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}
+  </div>
+  <ng-template #loading>
+  <img src="assets/images/loading.gif">
+  </ng-template> 
 

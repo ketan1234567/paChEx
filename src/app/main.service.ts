@@ -14,5 +14,8 @@ export class MainService {
   getAllBooks():Observable<Book[]>{
   return this._http.get<Book[]>(this.apiurl)
   }
+  getfavbookid(id: number): Observable<Book> {
+    return this._http.get<Book>(`${this.apiurl}/${id}`);
+  }
 
 }
