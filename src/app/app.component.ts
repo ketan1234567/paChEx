@@ -10,13 +10,10 @@ import { Book } from './book';
 })
 export class AppComponent {
   constructor(private _mainServices: MainService) {
-
   }
   childData: any
   allBooks: any;
-
   favBook: Observable<Book> | undefined; // Replace with your initial value or observable
-
   ngOnInit() {
     this.getBooks()
 
@@ -44,7 +41,6 @@ export class AppComponent {
       }
     );
   }
-
   mukesh(val: any) {
     this.childData = val
     console.log(val);
