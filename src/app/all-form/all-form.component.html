@@ -1,0 +1,25 @@
+<div style="text-align: center; background-color: aquamarine;">
+    <h1>Reactive form  with  FromGroup works!</h1>
+
+<form [formGroup]="MainForm" (ngSubmit)="submit()">
+  <label for="fname">First name:</label><br>
+  <input type="text"   formControlName="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text"  formControlName="lname"><br><br>
+ <button type="submit"> submit</button>
+</form> 
+</div>
+<div style="text-align: center; background-color: aquamarine;">
+    <h1>Reactive Form  With FormControl works!</h1>
+
+<input type="text" [formControl]="email" placeholder="Email"><br><br>
+<input type="text" [formControl]="password" placeholder="password"><br><br>
+
+</div><br><br>
+<div style="text-align: center; background-color: aquamarine;">
+    <h1>Reactive Form with  FormBuildr  works!</h1>
+
+<input type="text" [formControl]="email" placeholder="Email"><br><br>
+<input type="text" [formControl]="password" placeholder="password"><br><br>
+
+</div>

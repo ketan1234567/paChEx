@@ -1,4 +1,4 @@
-
+<!-- 
 <div style="text-align: center; background-color:skyblue">
     <h1>Parent Component</h1>
   <input type="text" #textval (keydown)="chnages(textval.value)"> 
@@ -10,26 +10,29 @@
 <div  style="text-align: center; background-color: aquamarine;">
     <!-- <app-comp2 [company23]="company"> </app-comp2> -->
       <!-- <app-comp2 [mainData]="allMaindata"> </app-comp2>  -->
-      <app-comp2 [message]="_msg" (showData)="mukesh($event)"> </app-comp2> 
-</div>
-<div>
-</div>
+      <!-- <app-comp2 [message]="_msg" (showData)="mukesh($event)"> </app-comp2> 
+</div> -->
+<!-- <div>
+</div>  
 <div style="text-align: center; background-color: azure;">
 <app-comp3>
 
-</app-comp3>
+</app-comp3> -->
 <br><br>
 <!-- <ul>
   <li *ngFor="let book of allBooks">
     Id: {{ book.id }}, Name: {{ book.name }}, Category: {{ book.category }}
   </li>
 </ul> -->
-<br><br>
+<!-- <br><br>
 <input type="text" #textVlue (keyup)="checkId(textVlue.value)" placeholder="enter your id" >
 <div *ngIf="favBook | async as book; else loading">
   Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}
   </div>
   <ng-template #loading>
   <img src="assets/images/loading.gif">
-  </ng-template> 
+  </ng-template>  -->
+
+  <br><br>
+  <app-all-form></app-all-form>
 

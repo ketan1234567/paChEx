@@ -9,6 +9,8 @@ import { Comp3Component } from './comp3/comp3.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import{ Testdata } from './testdata'
 import { HttpClientModule } from '@angular/common/http';
+import { AllFormComponent } from './all-form/all-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,13 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     Comp1Component,
     Comp2Component,
-    Comp3Component
+    Comp3Component,
+    AllFormComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(Testdata),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   
   ],
   providers: [],
