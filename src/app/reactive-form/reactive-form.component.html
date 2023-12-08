@@ -1,0 +1,61 @@
+<h1>reactive-form works!</h1>
+<form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+    <div>
+        FirstName: <input type="text" formControlName="fname">
+    </div>
+    <div>
+        LastName: <input type="text" formControlName="lname">
+    </div>
+    <div>
+        Email: <input type="text" formControlName="email">
+    </div>
+    <div formArrayName="mobilenos">
+        <div *ngFor="let data of regForm.get('mobilenos').controls; index as idx">
+            MobileNo: <input type="text" [formControlName]="idx">
+            <button (click)="addmore()">Add More</button><br>
+            <button (click)="deleterow(idx)">Delete</button>
+        </div>
+
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<br><br>
+<h3>Create New Team</h3>
+<div class="team">
+    <form [formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
+  <p>
+   Team Name: <input formControlName="teamname"> 
+    <label *ngIf="teamForm?.hasError('required')" class="error"> Team Name is Required</label>
+
+  </p>  
+  <p>
+    Team Age:
+    <input formControlName="teamAge"> 
+    <label *ngIf="teamForm?.hasError('required')" class="error"> Team Name is Required</label>
+
+  </p>
+  <button>Submit</button>
+    <br>
+    <div formGroupName="teamLead" class="employee">
+        <b>Team Lead</b>
+        <p>
+            Name:<input formControlName="empName">
+            <label *ngIf="teamForm.get('empName')?.hasError('required')" class="error">Name is required</label>
+
+        </p>
+        <p>
+            Age:<input formControlName="age">
+            <label *ngIf="teamForm.get('age')?.hasError('required')"> Age is Required</label>
+        </p>
+        <p>
+            City:<input formControlName="city">
+            <label *ngIf="teamForm.get('city')?.hasError('required')"> city is Required</label>
+        </p>
+        <button type="submit">submit</button>
+
+    </div>
+
+
+    </form>
+
+</div>

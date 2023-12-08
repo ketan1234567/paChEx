@@ -1,0 +1,52 @@
+<h1> template-driven-f Forms</h1>
+
+    <form #regdata="ngForm" (ngSubmit)="resgister(regdata)">
+        <div>
+            firstName:<input type="text" minlength="4" maxlength="6" placeholder="Enter firstName"  ngModel name="firstName" #fname="ngModel" (keyup)="mainVal(fname)">
+
+            
+
+              <div *ngIf="fname.touched && !fname.invalid; else elseBlock1">
+                <!-- Content to display when condition1 is true -->
+                <p>firstName is Required</p>
+              </div>
+              
+              <ng-template #elseBlock1>
+                <div *ngIf="FnameLe < 3; else elseBlock2">
+                  <!-- Content to display when condition1 is false and condition2 is true -->
+                  <p>You Have to fill input world in Four only</p>
+                </div>
+              
+                <ng-template #elseBlock2>
+                  <div *ngIf="FnameLe > 5; else elseBlock3">
+                    <!-- Content to display when condition1 and condition2 are false, and condition3 is true -->
+                    <p>You Have to fill input world in six only</p>
+                  </div>
+              
+                  <ng-template #elseBlock3>
+                    <!-- Content to display when none of the conditions are true -->
+                   
+                  </ng-template>
+                </ng-template>
+              </ng-template>
+
+        
+
+
+
+
+
+</div>
+        <div>
+            lastName:<input type="text" placeholder="Enter firstName" ngModel name="lastName"  #lname="ngModel">
+            <span *ngIf="lname.touched && !lname.invalid">LastName is Required</span>
+        </div>
+        <div>
+            email:<input type="text" placeholder="Enter firstName" ngModel name="email" #email="ngModel">
+            <span *ngIf="email.touched &&  !email.invalid">email is Required</span>
+        </div>
+        <div>
+           <button type="submit" [disabled]="regdata.invalid">Register</button>
+        </div>
+    </form>
+

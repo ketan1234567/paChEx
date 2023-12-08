@@ -10,7 +10,10 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import{ Testdata } from './testdata'
 import { HttpClientModule } from '@angular/common/http';
 import { AllFormComponent } from './all-form/all-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateDrivenFComponent } from './template-driven-f/template-driven-f.component';
+import { ModelDrivenFComponent } from './model-driven-f/model-driven-f.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     Comp1Component,
     Comp2Component,
     Comp3Component,
-    AllFormComponent
+    AllFormComponent,
+    TemplateDrivenFComponent,
+    ModelDrivenFComponent,
+    ReactiveFormComponent
 
   ],
   imports: [
@@ -27,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(Testdata),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   
   ],
   providers: [],
