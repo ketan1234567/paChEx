@@ -2,3 +2,14 @@
 
 <!-- <app-template-driven-f></app-template-driven-f> -->
 <app-reactive-form></app-reactive-form>
+
+<!-- <h3 *ngIf="ReadBooks | async as message"> {{ message }} </h3>  -->
+<ul>
+    <li *ngFor="let data of book123">
+    category:{{data.category}} Year:{{data.year}}</li>
+</ul>
+<h1>All Res</h1>
+<ul>
+    <li *ngFor="let data23 of fullresponse">
+    category:{{data23.category}} Year:{{data23.year}}</li>
+</ul>
